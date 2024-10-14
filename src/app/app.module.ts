@@ -21,19 +21,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookEditComponent } from './book-edit/book-edit.component';
 import { BookListComponent } from './book-list/book-list.component';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { VerifyJwtInterceptor } from './verify-jwt.interceptor';
-import { WordMeaningComponent } from './word-meaning/word-meaning.component';
 import { SendToFriendComponent } from './send-to-friend/send-to-friend.component';
 import { SentPageComponent } from './sent-page/sent-page.component';
+import { VerifyJwtInterceptor } from './verify-jwt.interceptor';
+import { WordMeaningComponent } from './word-meaning/word-meaning.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
     BookEditComponent,
     NavbarComponent,
     BookListComponent,

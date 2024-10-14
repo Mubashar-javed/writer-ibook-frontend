@@ -10,3 +10,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Node Version:
 - `16.20.2`
+
+## Currently BaseURL:
+-   `baseURL: 'http://localhost:8000/api'`
+- You can change it from `environment.ts` if required.

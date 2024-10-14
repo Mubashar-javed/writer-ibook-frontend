@@ -68,7 +68,6 @@ export class BookEditComponent implements OnInit {
     this.bookService.getWordDetail(this.selectedText.trim()).subscribe({
       next: (response) => {
         this.wordData = response;
-        console.log(this.wordData);
         this.loading = false;
       },
       error: (error) => {
