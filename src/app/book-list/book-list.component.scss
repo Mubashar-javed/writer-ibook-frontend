@@ -1,0 +1,13 @@
+.book-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.book-card {
+  max-width: 300px !important;
+  margin-bottom: 15px;
+}

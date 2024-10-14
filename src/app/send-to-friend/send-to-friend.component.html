@@ -1,0 +1,54 @@
+<div class="form-container">
+  <form [formGroup]="friendForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        formControlName="name"
+        placeholder="Friend's Name"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        formControlName="email"
+        placeholder="Friend's Email"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <input
+        matInput
+        formControlName="address"
+        placeholder="Friend's Address"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>City</mat-label>
+      <input
+        matInput
+        formControlName="city"
+        placeholder="Friend's City"
+        required
+      />
+    </mat-form-field>
+
+    <div class="button-container">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="friendForm.invalid"
+      >
+        Send to Friend
+      </button>
+    </div>
+  </form>
+</div>

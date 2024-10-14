@@ -1,0 +1,77 @@
+<section class="single-book">
+  <mat-card>
+    <mat-card-title style="display: inline">
+      <button
+        mat-icon-button
+        routerLink="['/books']"
+        style="max-width: 50px; top: -4px"
+        matTooltip="Go Back"
+      >
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+
+      Create/Edit Book
+    </mat-card-title>
+    <form [formGroup]="bookForm" (ngSubmit)="onSave()">
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input
+          matInput
+          formControlName="title"
+          placeholder="Enter book title"
+        />
+        <mat-error *ngIf="formFields['title'].hasError('required')">
+          Title is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Publish Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option
+            *ngFor="let status of publishStatusOptions"
+            [value]="status"
+          >
+            {{ status }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formFields['status'].hasError('required')">
+          Publish status is required
+        </mat-error>
+      </mat-form-field>
+
+      <div class="content-editor">
+        <label>Content</label>
+        <quill-editor
+          formControlName="content"
+          (onEditorCreated)="onEditorCreated($event)"
+        ></quill-editor>
+        <mat-error
+          *ngIf="
+            formFields['content'].touched &&
+            formFields['content'].hasError('required')
+          "
+        >
+          Book Content is required
+        </mat-error>
+      </div>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="bookForm.invalid"
+      >
+        Save
+      </button>
+    </form>
+  </mat-card>
+
+  <div class="word-meaning">
+    <h2>Word meanings</h2>
+    <app-word-meaning
+      [wordData]="wordData"
+      [loading]="loading"
+    ></app-word-meaning>
+  </div>
+</section>

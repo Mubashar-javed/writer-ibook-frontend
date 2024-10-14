@@ -1,0 +1,55 @@
+.single-book {
+  display: flex;
+  max-width: 100vw;
+  max-height: 90vh;
+  height: 100%;
+  align-items: center;
+  margin: 1.25rem;
+  margin-left: 1.875rem;
+}
+
+.word-meaning {
+  width: 40%;
+}
+mat-card {
+  max-width: 43.75rem;
+  margin: 20px auto;
+  padding: 1.25rem;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-top: 0.9375rem;
+}
+
+.content-editor {
+  margin-top: 1.25rem;
+}
+
+button {
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+@media (max-width: 37.5rem) {
+  mat-card {
+    max-width: 100%;
+    margin: 0.625rem;
+    padding: 0.625rem;
+  }
+
+  mat-form-field {
+    margin-top: 0.625rem;
+  }
+
+  .content-editor {
+    margin-top: 0.625rem;
+  }
+
+  button {
+    margin-top: 0.625rem;
+  }
+  .single-book {
+    flex-direction: column;
+  }
+}

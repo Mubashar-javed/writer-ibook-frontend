@@ -1,0 +1,13 @@
+<div class="d-flex">
+    <div *ngIf="friendData" class="friend-info">
+      <h2>Book Sent to:</h2>
+      <p><strong>Name:</strong> {{ friendData.name }}</p>
+      <p><strong>Email:</strong> {{ friendData.email }}</p>
+      <p><strong>Address:</strong> {{ friendData.address }}</p>
+      <p><strong>City:</strong> {{ friendData.city }}</p>
+    </div>
+    
+    <div *ngIf="!friendData">
+      <h2>No friend data available.</h2>
+    </div>
+</div>

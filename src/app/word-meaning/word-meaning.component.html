@@ -1,0 +1,35 @@
+<div *ngIf="loading" class="loader-container">
+  <mat-progress-spinner mode="indeterminate" diameter="40"></mat-progress-spinner>
+  <p>Fetching word meaning...</p>
+</div>
+
+<div
+  *ngIf="
+    !loading && wordData && wordData.results && wordData.results.length > 0
+  "
+>
+  <h2>Definitions for "{{ wordData.word }}"</h2>
+
+  <div *ngFor="let result of wordData.results" class="result-item">
+    <p><strong>Definition:</strong> {{ result.definition }}</p>
+    <p *ngIf="result.partOfSpeech">
+      <strong>Part of Speech:</strong> {{ result.partOfSpeech }}
+    </p>
+
+    <div *ngIf="result.examples && result.examples.length > 0">
+      <strong>Examples:</strong>
+      <ul>
+        <li *ngFor="let example of result.examples">{{ example }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div
+  *ngIf="
+    !loading &&
+    (!wordData || !wordData.results || wordData.results.length === 0)
+  "
+>
+  <p>No definitions available.</p>
+</div>

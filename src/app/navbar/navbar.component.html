@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <span>Writers IBook</span>
+
+  <span class="spacer"></span>
+
+  <span class="username">Welcome, {{ username }}</span>
+  <button
+    mat-raised-button
+    color="warn"
+    (click)="onLogout()"
+    class="btn-logout"
+  >
+    <mat-icon>exit_to_app</mat-icon>
+    Logout
+  </button>
+</mat-toolbar>
